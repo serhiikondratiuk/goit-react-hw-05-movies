@@ -1,0 +1,12 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.activeLink {
+  color: yellowgreen;
+}
