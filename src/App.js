@@ -4,6 +4,7 @@ import AppBar from "./components/AppBar";
 import Container from "./components/Container";
 import HomePage from "./views/HomePage";
 import MoviesPage from "./views/MoviesPage";
+import MovieDetailsPage from "./views/MovieDetails";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
 
         <Route exact path="/movies">
           <MoviesPage />
+        </Route>
+
+        <Route path="/movies/:movieId">
+          <MovieDetailsPage />
         </Route>
 
         <Route>
