@@ -1,10 +1,13 @@
 import s from "./MovieDetails.module.css";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Route, NavLink, useParams, useRouteMatch } from "react-router-dom";
 import * as moviesAPI from "../../services/moviesApi";
+import Cast from "../Cast";
+import Reviews from "../Reviews";
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
+  const { url } = useRouteMatch();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -41,10 +44,32 @@ function MovieDetailsPage() {
                   </li>
                 ))}
               </ul>
+              <div className={s.linkWrapper}>
+                <NavLink
+                  className={s.link}
+                  activeClassName={s.activeLink}
+                  to={`${url}/cast`}
+                >
+                  Cast
+                </NavLink>
+                <NavLink
+                  className={s.link}
+                  activeClassName={s.activeLink}
+                  to={`${url}/reviews`}
+                >
+                  Reviews
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
       )}
+      <Route path={`${url}/cast`}>
+        <Cast />
+      </Route>
+      <Route path={`${url}/reviews`}>
+        <Reviews />
+      </Route>
     </>
   );
 }

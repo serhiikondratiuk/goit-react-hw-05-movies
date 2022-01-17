@@ -13,9 +13,10 @@ function HomePage() {
   return (
     <>
       <h1 className={s.title}>Trending Movies</h1>
-      <ul className={s.gallery}>
-        {movies &&
-          movies.map((movie) => (
+
+      {movies && (
+        <ul className={s.gallery}>
+          {movies.map((movie) => (
             <li key={movie.id} className={s.item}>
               <Link to={`/movies/${movie.id}`} className={s.link}>
                 <img
@@ -26,7 +27,8 @@ function HomePage() {
               </Link>
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </>
   );
 }

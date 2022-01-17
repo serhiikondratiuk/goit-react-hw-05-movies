@@ -1,6 +1,7 @@
 .img {
   border-radius: 10px;
   max-width: 400px;
+  box-shadow: 0 0 0 #a9a9a9, 0 0 5px #a9a9a9, 0 0 5px #a9a9a9, 0 0 20px #a9a9a9;
 }
 
 .title {
@@ -13,15 +14,18 @@
 .flexWrapper {
   display: flex;
   justify-content: space-evenly;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.1);
+  padding: 40px 0;
+  background-color: rgb(42, 52, 54);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 .textWrapper {
+  padding: 0 15px;
   max-width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  border-radius: 10px;
 }
 
 .overview,
@@ -39,4 +43,27 @@
 
 .genre {
   padding-left: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: #03e9f4;
+  padding: 5px 25px;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: 1px solid #03e9f4;
+}
+
+.link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.link:hover,
+.activeLink {
+  box-shadow: 0 0 0 #03e9f4, 0 0 5px #03e9f4, 0 0 5px #03e9f4, 0 0 20px #03e9f4;
+}
+
+.linkWrapper {
+  display: flex;
+  justify-content: center;
 }
