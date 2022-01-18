@@ -7,7 +7,7 @@ import Reviews from "../Reviews";
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
-  const { url } = useRouteMatch();
+  const { url, path } = useRouteMatch();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -64,10 +64,10 @@ function MovieDetailsPage() {
           </div>
         </div>
       )}
-      <Route path={`${url}/cast`}>
+      <Route path={`${path}/cast`}>
         <Cast />
       </Route>
-      <Route path={`${url}/reviews`}>
+      <Route path={`${path}/reviews`}>
         <Reviews />
       </Route>
     </>

@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.wrapper {
+  margin-bottom: 30px;
+}
+
 .flexWrapper {
   display: flex;
   justify-content: space-evenly;
