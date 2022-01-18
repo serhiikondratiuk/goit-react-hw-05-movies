@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 40px 0;
-  background-color: rgb(42, 52, 54);
+  background-color: #2a3436;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
@@ -36,7 +36,7 @@
 .releaseDate,
 .genresList,
 .raiting {
-  color: #c1b080b3;
+  color: #c1b080;
   font-size: 18px;
 }
 

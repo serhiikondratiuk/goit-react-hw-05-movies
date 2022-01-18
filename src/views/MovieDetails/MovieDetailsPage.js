@@ -1,9 +1,16 @@
 import s from "./MovieDetails.module.css";
 import { useState, useEffect } from "react";
-import { Route, NavLink, useParams, useRouteMatch } from "react-router-dom";
+import {
+  Link,
+  Route,
+  NavLink,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 import * as moviesAPI from "../../services/moviesApi";
 import Cast from "../Cast";
 import Reviews from "../Reviews";
+import Placeholder from "../../images/placeholder.png";
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -18,11 +25,16 @@ function MovieDetailsPage() {
     <>
       {movie && (
         <div className={s.wrapper}>
+          <Link to="/">Go back</Link>
           <h2 className={s.title}>{movie.title}</h2>
           <div className={s.flexWrapper}>
             <img
               className={s.img}
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  : Placeholder
+              }
               alt={movie.title}
             />
             <div className={s.textWrapper}>
