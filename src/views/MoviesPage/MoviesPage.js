@@ -1,19 +1,8 @@
 import s from "./MoviesPage.module.css";
+import Form from "../../components/Form";
 
 function MoviesPage() {
-  return (
-    <form className={s.form}>
-      <input
-        className={s.input}
-        name=""
-        // value=""
-        placeholder="Enter movie name"
-      />
-      <button type="submit" className={s.button}>
-        Search
-      </button>
-    </form>
-  );
+  return <Form />;
 }
 
 export default MoviesPage;
