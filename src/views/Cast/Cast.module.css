@@ -16,7 +16,17 @@
 }
 
 .name {
+  text-decoration: underline;
+}
+
+.name,
+.character {
   text-align: center;
+}
+
+.character {
+  font-weight: 600;
+  font-style: italic;
 }
 
 .img {

@@ -1,5 +1,6 @@
 import s from "./Loader.module.css";
 import Loader from "react-loader-spinner";
+
 function NewLoader() {
   return (
     <div className={s.wrapper}>

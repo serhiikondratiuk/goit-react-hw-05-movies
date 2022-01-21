@@ -45,7 +45,7 @@
     "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.1",
-    "react-loader-spinner": "^5.0.10",
+    "react-loader-spinner": "^4.0.0",
     "react-toastify": "^8.1.0"
   },
   "lint-staged": {

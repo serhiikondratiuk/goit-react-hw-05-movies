@@ -21,6 +21,7 @@ function Cast() {
           {cast.map((actor) => (
             <li className={s.item} key={actor.id}>
               <h3 className={s.name}>{actor.name}</h3>
+              <p className={s.character}>{actor.character}</p>
               <img
                 className={s.img}
                 src={

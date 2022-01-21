@@ -1,6 +1,6 @@
 import s from "./From.module.css";
 import { useState } from "react";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function Form({ onSubmit }) {
   const [query, setQuery] = useState("");
@@ -13,7 +13,7 @@ function Form({ onSubmit }) {
     e.preventDefault();
 
     if (query.trim() === "") {
-      //   return toast.warning("Enter something new...");
+      return toast.warning("Enter something new...");
     }
     onSubmit(query);
     setQuery("");
