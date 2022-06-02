@@ -1,6 +1,6 @@
 import s from "./MoviesPage.module.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as moviesAPI from "../../services/moviesApi";
 import Form from "../../components/Form";
@@ -15,10 +15,17 @@ function MoviesPage() {
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("idle");
 
+  const history = useHistory();
+  const location = useLocation();
+
   useEffect(() => {
     if (query) {
       setStatus("pending");
       fetchMovies();
+      history.push({
+        ...location,
+        search: `query=${query}`,
+      });
     }
   }, [query]);
 
@@ -26,11 +33,12 @@ function MoviesPage() {
     moviesAPI
       .fetchMovieByName(query, page)
       .then(({ results }) => {
+        const capitalizedQuery = query.toUpperCase();
         if (results.length === 0) {
-          toast.warning(`There is no ${query} found`);
+          toast.warning(`There is no ${capitalizedQuery} found`);
         }
         if (results.length > 0) {
-          toast.success(`New ${query} found!`);
+          toast.success(`New ${capitalizedQuery} movies found!`);
         }
         setMovies([...movies, ...results]);
         setStatus("resolved");
